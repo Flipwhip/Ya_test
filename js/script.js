@@ -1,6 +1,56 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+  // анимация при скроле
+  function animateLecture() {
+    let lectureBlock = document.getElementById('lecture');
+    let topBlock = lectureBlock.querySelector('.lecture__top');
+    let bottomBlock = lectureBlock.querySelector('.lecture__bottom');
+
+    const observerOptions = {
+      root: null, // Обозначает viewport
+      rootMargin: '0px',
+      threshold: 0.4
+    };
+
+    const observerCallback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          lectureBlock.style.opacity = '1';
+
+          // Анимация для .lecture__top
+          topBlock.classList.add('lecture__top--animate');
+
+          // Анимация для .lecture__bottom
+          bottomBlock.classList.add('lecture__bottom--animate');
+
+          observer.unobserve(entry.target); // Перестаем наблюдать за элементом после анимации
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Наблюдаем за блоком lectureBlock
+    observer.observe(lectureBlock);
+  }
+
+  // Проверяем видимость элемента lectureBlock
+  let lectureBlock = document.getElementById('lecture');
+  let rect = lectureBlock.getBoundingClientRect();
+  let isVisible = (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+
+  // Запускаем анимацию только если элемент виден
+  if (isVisible) {
+    animateLecture();
+  }
+
   // бегущая строка
+  // создаем функию для бегущей строки
   // создаем функию для бегущей строки
   function handleMarquee() {
     // выбираем блоки, куда вложен текст, который должен анимироваться
@@ -15,10 +65,10 @@ document.addEventListener('DOMContentLoaded', function () {
       });
       // вычисляем сумму длинн всех дочерних элементов, для анимации
       const totalWidth = children.reduce((sum, child) => sum + child.offsetWidth, 0);
+
       // выставляем шаг анимации и переменную для контроля кадра анимации
       let progress = 0;
       let animationFrameId;
-
       // создаем функцию анимации
       function loop() {
         progress -= 1;
@@ -45,18 +95,6 @@ document.addEventListener('DOMContentLoaded', function () {
       // добавляем обработчики событий наведения мыши и отведения
       container.addEventListener('mouseover', stopAnimation);
       container.addEventListener('mouseout', startAnimation);
-
-      // Добавляем обработчики для сворачивания страницы и потери фокуса
-      document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'hidden') {
-          stopAnimation();
-        } else {
-          startAnimation();
-        }
-      });
-
-      window.addEventListener('blur', stopAnimation);
-      window.addEventListener('focus', startAnimation);
 
       startAnimation();
     });
