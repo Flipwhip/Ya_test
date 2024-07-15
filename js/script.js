@@ -659,4 +659,11 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   handleSladerParticipants();
+
+   window.addEventListener('load', () => {
+    // Убеждаемся, что все ресурсы загружены
+    document.querySelector('.loading-screen').style.display = 'none';
+    document.querySelector('.main-content').style.display = 'block';
+  });
+
 });
