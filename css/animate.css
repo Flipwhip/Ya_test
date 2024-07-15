@@ -1,6 +1,54 @@
+@-webkit-keyframes colorChange {
+  0% {
+    fill: #D6D6D6;
+  }
+
+  50% {
+    fill: #D6D6D6;
+  }
+
+  100% {
+    fill: #595653;
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    fill: #D6D6D6;
+  }
+
+  50% {
+    fill: #D6D6D6;
+  }
+
+  100% {
+    fill: #595653;
+  }
+}
+
+@-webkit-keyframes sizeChange {
+  0% {
+    scale: 0.9;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes sizeChange {
+  0% {
+    scale: 0.9;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
 .header {
-  -webkit-animation: slideDown 0.6s ease, fadeIn 0.6s ease;
-  animation: slideDown 0.6s ease, fadeIn 0.6s ease;
+  -webkit-animation: slideDown 0.6s ease, fadeIn 0.6s ease-in;
+  animation: slideDown 0.6s ease, fadeIn 0.6s ease-in;
 }
 
 @-webkit-keyframes slideDown {
@@ -93,6 +141,7 @@
     transform: translateX(0%);
   }
 }
+
 
 .lecture__bottom {
   -webkit-animation: slideLeft 0.6s ease;
