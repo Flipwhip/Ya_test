@@ -396,6 +396,7 @@ svg {
 .lecture {
   padding-top: 80px;
   margin-bottom: var(--value-indent);
+  opacity: 0;
   overflow: hidden;
 }
 
@@ -441,6 +442,7 @@ svg {
 }
 
 .lecture__bottom {
+  padding-bottom: 20px;
   display: flex;
   justify-content: space-between;
 }
@@ -601,7 +603,7 @@ td svg {
 /* stage */
 
 .stages {
-  padding-top: var(--value-indent);
+  padding-top: 81px;
   margin-bottom: var(--value-indent);
 }
 
