@@ -177,6 +177,7 @@ svg {
 /* header */
 
 .header {
+  position: relative;
   height: 700px;
   background-color: #e9ded4;
   background-image: url(../img/image23.png);
@@ -403,6 +404,7 @@ svg {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
 }
 
 .lecture__descr-top {

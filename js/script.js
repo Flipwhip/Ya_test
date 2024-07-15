@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+
   // бегущая строка
   // создаем функию для бегущей строки
   function handleMarquee() {
@@ -82,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-   // слайдер в блоке Stages
+  // слайдер в блоке Stages
   function handleSliderStages() {
     // Находим элементы слайдера и кнопок навигации
     const sliderStages = document.querySelector('.stages__slider');
@@ -268,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Вызываем функцию инициализации слайдера
   handleSliderStages();
- 
+
   // слайдер участников - блок Participants
   function handleSladerParticipants() {
     'use strict'; // Использование строгого режима для обеспечения более строгого выполнения кода
@@ -293,6 +294,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Возвращаем true, если элемент пересекается с экраном, иначе false
         return overlapX > 0 && overlapY > 0;
       }
+
 
       return function (selector, config) {// Возвращаем функцию, создающую слайдер
         var
@@ -660,7 +662,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   handleSladerParticipants();
 
-   window.addEventListener('load', () => {
+  window.addEventListener('load', () => {
     let svgs = document.querySelectorAll('.loading-svg path');
 
     let animateSVGs = () => {
@@ -672,12 +674,12 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     animateSVGs();
-     
+
     // Убеждаемся, что все ресурсы загружены
     setTimeout(() => {
       document.querySelector('.loading-screen').style.display = 'none';
       document.querySelector('.main-content').style.display = 'block';
-    }, 1500);
+    }, 2000);
   });
 
 });
