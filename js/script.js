@@ -62,8 +62,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  handleMarquee();
-
   // плавный переход по якорям
   // Находим все элементы <a>, у которых атрибут href начинается с символа '#'
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -679,6 +677,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => {
       document.querySelector('.loading-screen').style.display = 'none';
       document.querySelector('.main-content').style.display = 'block';
+      handleMarquee();
     }, 2000);
   });
 
