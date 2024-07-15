@@ -165,6 +165,10 @@ svg {
   z-index: 1000;
 }
 
+.loading-svg path {
+  scale: 0.9;
+}
+
 .main-content {
   display: none;
 }
