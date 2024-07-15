@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const observerOptions = {
       root: null, // Обозначает viewport
       rootMargin: '0px',
-      threshold: 0.4
+      threshold: 0.2
     };
 
     const observerCallback = (entries, observer) => {
