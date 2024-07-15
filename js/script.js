@@ -661,6 +661,18 @@ document.addEventListener('DOMContentLoaded', function () {
   handleSladerParticipants();
 
    window.addEventListener('load', () => {
+    let svgs = document.querySelectorAll('.loading-svg path');
+
+    let animateSVGs = () => {
+      svgs.forEach((svg, index) => {
+        setTimeout(() => {
+          svg.style.animation = 'colorChange 0.5s forwards, sizeChange 0.5s forwards';
+        }, index * 500);
+      });
+    };
+
+    animateSVGs();
+     
     // Убеждаемся, что все ресурсы загружены
     setTimeout(() => {
       document.querySelector('.loading-screen').style.display = 'none';
