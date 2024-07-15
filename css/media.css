@@ -389,7 +389,7 @@
   }
 
   .stages {
-    padding-top: var(--value-indent-mob);
+    padding-top: 40px;
     margin-bottom: var(--value-indent-mob);
     overflow: hidden;
   }
