@@ -3,7 +3,7 @@
     fill: #D6D6D6;
   }
 
-  50% {
+  90% {
     fill: #D6D6D6;
   }
 
@@ -17,7 +17,7 @@
     fill: #D6D6D6;
   }
 
-  50% {
+  90% {
     fill: #D6D6D6;
   }
 
@@ -31,6 +31,10 @@
     scale: 0.9;
   }
 
+  90% {
+    scale: 1;
+  }
+
   100% {
     scale: 1;
   }
@@ -41,11 +45,14 @@
     scale: 0.9;
   }
 
+  90% {
+    scale: 1;
+  }
+
   100% {
     scale: 1;
   }
 }
-
 .header {
   -webkit-animation: slideDown 0.6s ease, fadeIn 0.6s ease-in;
   animation: slideDown 0.6s ease, fadeIn 0.6s ease-in;
