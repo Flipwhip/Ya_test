@@ -323,7 +323,7 @@ svg {
   height: 441px;
   bottom: 0;
   right: -201px;
-  background-image: url(../img/chessboard.png), url(../img/city_1.png);
+  background-image: url(../img/city_1.png), url(../img/chessboard.png);
   background-position: -2px 11px;
   background-repeat: no-repeat;
   background-size: 100.5%;
