@@ -1,15 +1,15 @@
 @media (any-hover: hover) {
-  .header__link-left:hover {
+  .hero__link-left:hover {
     color: var(--btn__default-color);
     background-color: var(--btn__hover-color);
   }
 
-  .header__link-right:hover {
+  .hero__link-right:hover {
     color: var(--background-color);
     background-color: var(--btn__default-color);
   }
 
-  .header__link-left:active {
+  .hero__link-left:active {
     color: var(--background-color);
     background-color: #D6D6D6;
     -webkit-transition: background-color 0.1s linear, color 0.1s linear;
@@ -17,7 +17,7 @@
     transition: background-color 0.1s linear, color 0.1s linear;
   }
 
-  .header__link-right:active {
+  .hero__link-right:active {
     color: var(--background-color);
     background-color: #D6D6D6;
     border: 1px solid #D6D6D6;
@@ -57,7 +57,7 @@
 
 @media (max-width: 1899px) {
 
-  .header__wrapper {
+  .hero__wrapper {
     max-width: 1346px;
     overflow: hidden;
   }
@@ -71,12 +71,12 @@
     padding: 0 20px;
   }
 
-  .header {
+  .hero {
     width: 100%;
     height: 774px;
   }
 
-  .header__wrapper {
+  .hero__wrapper {
     max-width: 375px;
     height: 100%;
   }
@@ -84,18 +84,18 @@
   .header__logo {
     width: 213px;
     padding-top: 18px;
-    margin-bottom: 40px;
   }
 
-  .header__content {
+  .hero__content {
     width: 335px;
+    top: 92px
   }
 
-  .header__content h1 {
+  .hero__content h1 {
     font-size: 36px;
   }
 
-  .centre {
+  .center {
     padding-left: 65px;
   }
 
@@ -103,12 +103,12 @@
     padding-left: 30px;
   }
 
-  .header__descr {
+  .hero__descr {
     margin-bottom: 30px;
     text-align: start;
   }
 
-  .header__link {
+  .hero__link {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -125,17 +125,17 @@
   }
 
 
-  .link-header {
+  .link-hero {
     padding: 13px 43px;
     width: 335px;
     height: 47px;
   }
 
-  .header__link-left {
+  .hero__link-left {
     margin-bottom: 14px;
   }
 
-  .header__link-right {
+  .hero__link-right {
     background: #fff;
     opacity: 0.9;
     border: none;
