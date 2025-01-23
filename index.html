@@ -37,68 +37,71 @@
   </div>
 
   <div class="main-content">
-
-
     <header class="header">
-      <div class="header__wrapper">
-        <div class="header__container container">
-          <a href="#" class="header__logo">
-            <svg viewBox="0 0 246 36">
-              <use xlink:href="./sprite.svg#logo"></use>
-            </svg>
-          </a>
-          <div class="header__content">
-            <h1>Превратите уездный город <span class="centre">в столицу</span> <span class="left">земного шара</span>
-            </h1>
-            <p class="header__descr">
-              Оплатите взнос на&nbsp;телеграммы для&nbsp;организации Международного васюкинского турнира
-              по&nbsp;шахматам
-            </p>
-            <div class="header__link">
-              <a href="#lecture" class="link-btn-reset link-header header__link-left">
-                Поддержать шахматную мысль
-              </a>
-              <a href="#stages" class="link-btn-reset link-header header__link-right">
-                Подробнее о турнире
-              </a>
+      <div class="container">
+        <a href="#" class="header__logo">
+          <svg viewBox="0 0 246 36">
+            <use xlink:href="./sprite.svg#logo"></use>
+          </svg>
+        </a>
+      </div>
+
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero__wrapper">
+          <div class="hero__container container">
+            <div class="hero__content">
+              <h1>Превратите уездный город <span class="center">в столицу</span> <span class="left">земного шара</span>
+              </h1>
+              <p class="hero__descr">
+                Оплатите взнос на&nbsp;телеграммы для&nbsp;организации Международного васюкинского турнира
+                по&nbsp;шахматам
+              </p>
+              <div class="hero__link">
+                <a href="#lecture" class="link-btn-reset link-hero hero__link-left">
+                  Поддержать шахматную мысль
+                </a>
+                <a href="#stages" class="link-btn-reset link-hero hero__link-right">
+                  Подробнее о турнире
+                </a>
+              </div>
+            </div>
+            <div class="bg-sun">
+              <svg viewBox="0 0 777 675">
+                <use xlink:href="./sprite.svg#group"></use>
+              </svg>
+            </div>
+            <div class="bg-chess__king"></div>
+            <div class="bg-chess__queen"></div>
+            <div class="bg-city">
+              <img src="./img/path.png" alt="path">
+              <img class="pawn" src="./img/pawn.png" alt="pawn">
             </div>
           </div>
-          <div class="bg-sun">
-            <svg viewBox="0 0 777 675">
-              <use xlink:href="./sprite.svg#group"></use>
-            </svg>
-          </div>
-          <div class="bg-chess__king"></div>
-          <div class="bg-chess__queen"></div>
-          <div class="bg-city">
-            <img src="./img/path.png" alt="path">
-            <img class="pawn" src="./img/pawn.png" alt="pawn">
-          </div>
-        </div>
 
+        </div>
+      </section>
+      <div class="ticker">
+        <div class="ticker__line">
+          <div class="ticker__item">
+            <span>
+              Дело помощи утопающим&nbsp;&mdash; дело рук самих утопающих!
+            </span>
+          </div>
+          <div class="ticker__item">
+            <span>
+              Шахматы двигают вперед не&nbsp;только культуру, но&nbsp;и&nbsp;экономику!
+            </span>
+          </div>
+          <div class="ticker__item">
+            <span>
+              Лед тронулся, господа присяжные заседатели!
+            </span>
+          </div>
+        </div>
       </div>
-    </header>
-    <div class="ticker">
-      <div class="ticker__line">
-        <div class="ticker__item">
-          <span>
-            Дело помощи утопающим&nbsp;&mdash; дело рук самих утопающих!
-          </span>
-        </div>
-        <div class="ticker__item">
-          <span>
-            Шахматы двигают вперед не&nbsp;только культуру, но&nbsp;и&nbsp;экономику!
-          </span>
-        </div>
-        <div class="ticker__item">
-          <span>
-            Лед тронулся, господа присяжные заседатели!
-          </span>
-        </div>
-      </div>
-    </div>
-    <main class="container">
-      <article class="lecture" id="lecture">
+      <article class="lecture container" id="lecture">
         <div class="lecture__top">
           <div class="lecture__descr-top">
             <p class="lecture__descr">
@@ -166,7 +169,7 @@
           </div>
         </div>
       </article>
-      <section class="stages" id="stages">
+      <section class="stages container" id="stages">
         <div class="stages__title">
           <h2 class="title">
             Этапы преображения Васюков
@@ -240,7 +243,7 @@
 
         </div>
       </section>
-      <section class="participants">
+      <section class="participants container">
         <div class="slider__container slider">
           <h2 class="title participants__title">
             Участники турнира
