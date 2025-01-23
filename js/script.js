@@ -1,6 +1,7 @@
+'use strict';
+
 document.addEventListener('DOMContentLoaded', function () {
 
-  // анимация при скроле
   function animateLecture() {
     let lectureBlock = document.getElementById('lecture');
     let topBlock = lectureBlock.querySelector('.lecture__top');
@@ -9,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const observerOptions = {
       root: null, // Обозначает viewport
       rootMargin: '0px',
-      threshold: 0.2
+      threshold: 0.4
     };
 
     const observerCallback = (entries, observer) => {
@@ -50,7 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // бегущая строка
-  // создаем функию для бегущей строки
   // создаем функию для бегущей строки
   function handleMarquee() {
     // выбираем блоки, куда вложен текст, который должен анимироваться
@@ -118,6 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+
 
   // слайдер в блоке Stages
   function handleSliderStages() {
@@ -308,13 +309,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // слайдер участников - блок Participants
   function handleSladerParticipants() {
-    'use strict'; // Использование строгого режима для обеспечения более строгого выполнения кода
 
-    var multiItemSlider = (function () {
+
+    const multiItemSlider = (function () {
       function _isElementVisible(element) {
         // Получаем координаты элемента на экране и высчитываем виден ли элеменьт относитель 
         //начала координат - верхнего левого угла экрана
-        var rect = element.getBoundingClientRect(),
+        const rect = element.getBoundingClientRect(),
           vWidth = window.innerWidth, // Ширина окна браузера
           vHeight = window.innerHeight; // Высота окна браузера
 
@@ -324,8 +325,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Проверяем пересечение элемента с экраном
-        var overlapX = Math.max(0, Math.min(rect.right, vWidth) - Math.max(rect.left, 0)); // Вычисляем пересечение элемента с экраном по горизонтали, либо 0 либо пересекается
-        var overlapY = Math.max(0, Math.min(rect.bottom, vHeight) - Math.max(rect.top, 0)); // Вычисляем пересечение элемента с экраном по вертикали
+        const overlapX = Math.max(0, Math.min(rect.right, vWidth) - Math.max(rect.left, 0)); // Вычисляем пересечение элемента с экраном по горизонтали, либо 0 либо пересекается
+        const overlapY = Math.max(0, Math.min(rect.bottom, vHeight) - Math.max(rect.top, 0)); // Вычисляем пересечение элемента с экраном по вертикали
 
         // Возвращаем true, если элемент пересекается с экраном, иначе false
         return overlapX > 0 && overlapY > 0;
@@ -333,7 +334,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
       return function (selector, config) {// Возвращаем функцию, создающую слайдер
-        var
+        let
           _mainElement = document.querySelector(selector), // Основной элемент блока
           _sliderWrapper = _mainElement.querySelector('.slider__wrapper'), // Обёртка для слайдов (.slider__item)
           _sliderItems = _mainElement.querySelectorAll('.slider__item'), // Элементы, которые перемещаются в слайдере
@@ -376,9 +377,9 @@ document.addEventListener('DOMContentLoaded', function () {
           _items.push({ item: item, position: index, transform: 0 }); // Добавление каждого слайда в массив _items
         });
 
-        var _setActive = function () { // Функция для установки активного состояния из массива _states по ширине экрана
-          var _index = 0;
-          var width = parseFloat(document.body.clientWidth); // Получаем ширину окна
+        const _setActive = function () { // Функция для установки активного состояния из массива _states по ширине экрана
+          let _index = 0;
+          const width = parseFloat(document.body.clientWidth); // Получаем ширину окна
 
           _states.forEach(function (item, index) { // Обновляем состояние активных элементов в зависимости от ширины экрана
             _states[index].active = false;
@@ -390,8 +391,8 @@ document.addEventListener('DOMContentLoaded', function () {
           _resetPosition(); // функция для установки последнего слайда перед первым и пересчет трансформации его, в зависимиости от ширины экрана
         }
 
-        var _getActive = function () { // Функция для получения активного состояния, предназначена для поиска и возвращения индекса активного состояния из массива _states.
-          var _index;
+        const _getActive = function () { // Функция для получения активного состояния, предназначена для поиска и возвращения индекса активного состояния из массива _states.
+          let _index;
           _states.forEach(function (item, index) {
             if (_states[index].active) {
               _index = index;
@@ -400,9 +401,9 @@ document.addEventListener('DOMContentLoaded', function () {
           return _index; // возвращаем индекс активного состояния
         }
 
-        var position = { // Метод для получения индекса элемента с минимальной позицей
+        const position = { // Метод для получения индекса элемента с минимальной позицей
           getItemMin: function () { // Получение минимальной позиции
-            var indexItem = 0; // Инициализация индекса для минимального элемента
+            let indexItem = 0; // Инициализация индекса для минимального элемента
             _items.forEach(function (item, index) { // Перебор всех элементов слайдера
               if (item.position < _items[indexItem].position) { // Если текущая позиция элемента меньше позиции минимального элемента
                 indexItem = index; // Обновление индекса минимального элемента
@@ -413,7 +414,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
           // Метод для получения индекса элемента с максимальной позицией
           getItemMax: function () {
-            var indexItem = 0; // Инициализация индекса для максимального элемента
+            let indexItem = 0; // Инициализация индекса для максимального элемента
             _items.forEach(function (item, index) { // Перебор всех элементов слайдера
               if (item.position > _items[indexItem].position) { // Если текущая позиция элемента больше позиции максимального элемента
                 indexItem = index; // Обновление индекса максимального элемента
@@ -433,40 +434,33 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         }
 
-        var _resetPosition = function () { // смещаем последнюю карточку в начало за область видимости
-          var lastItem = _items[_items.length - 1]; // Получаем последний элемент из массива _items
+        const _resetPosition = function () { // смещаем последнюю карточку в начало за область видимости
+          const lastItem = _items[_items.length - 1]; // Получаем последний элемент из массива _items
           lastItem.position = position.getMin() - 1; // Устанавливаем его позицию на одну меньше минимальной позиции
           lastItem.transform = -_items.length * _itemWidth; // Устанавливаем значение transform для перемещения элемента влево на ширину всех элементов
           lastItem.item.style.transform = 'translateX(' + lastItem.transform + 'px)'; // Применяем CSS-трансформацию для сдвига элемента влево
         };
 
-        var _addIndicators = function () { // Добавление индикатора слайдов
+        const _addIndicators = function () { // Добавление индикатора слайдов
           _setActive(); // Устанавливаем активное состояние перед использованием
-          var activeState = _states.find(state => state.active); // Находим активное состояние в массиве _states
+          let activeState = _states.find(state => state.active); // Находим активное состояние в массиве _states
           _indexIndicator = activeState.count - 1; // Устанавливаем индекс индикатора в соответствии с активным состоянием
-          var sliderIndicator = document.querySelector('.slider__indicator'); // Устанавливаем индекс индикатора в соответствии с активным состоянием
+          let sliderIndicator = document.querySelector('.slider__indicator'); // Устанавливаем индекс индикатора в соответствии с активным состоянием
           sliderIndicator.textContent = activeState.count; // Устанавливаем текст индикатора текущего слайда
           _indicatorItems = sliderIndicator; // Сохраняем ссылку на элемент индикатора текущего слайда
-          var totalItemsIndicator = document.querySelector('.slider__indicator_all');// Находим элемент для общего числа слайдов
+          let totalItemsIndicator = document.querySelector('.slider__indicator_all');// Находим элемент для общего числа слайдов
           totalItemsIndicator.textContent = _sliderItems.length; // Устанавливаем текст с общим числом слайдов
         };
 
-        // Функция для трансформации элементов в зависимости от направления
-        // Карточки мгновенно перемещаются на новое место без анимации, 
-        //а блок с карточками плавно смещается с анимацией, 
-        // создавая эффект бесконечного и плавного перелистывания.
-        var _transformItem = function (direction) {
-          var nextItem; // индекс следующего элемента в слайдере
+        const _transformItem = function (direction) {
+          let nextItem; // индекс следующего элемента в слайдере
 
-          // Проверяет, виден ли основной элемент (слайдер)
           if (!_isElementVisible(_mainElement)) {
             return;
           }
 
           if (direction === 'right') { // Если направление движения вправо
             _positionLeftItem++; // Увеличивает левую позицию элемента на 1
-
-            // Проверяет, вышел ли крайний правый элемент за пределы видимости
             nextItem = position.getItemMin(); // Получает индекс минимального элемента
             _items[nextItem].position = position.getMax() + 1; // Устанавливает его позицию за пределами правого края
             _items[nextItem].transform += _items.length * _itemWidth; // Увеличивает трансформацию для его перемещения
@@ -483,10 +477,8 @@ document.addEventListener('DOMContentLoaded', function () {
             _items[nextItem].item.style.transform = 'translateX(' + _items[nextItem].transform + 'px)'; // Применяет трансформацию
             _transform += _itemWidth; // Увеличивает общую трансформацию на ширину элемента
             _indexIndicator = (_indexIndicator - 1 + _sliderItems.length) % _sliderItems.length; // Обновляет индикатор текущего элемента
-            console.log(_items[nextItem].position);
           }
 
-          // Проверяет, если левая позиция элемента превысила максимум, устанавливает минимальную позицию
           if (_positionLeftItem > position.getMax()) {
             _positionLeftItem = position.getMin(); // Устанавливает минимальную позицию
             _transform = -_positionLeftItem * _itemWidth; // Пересчитывает трансформацию
@@ -500,7 +492,7 @@ document.addEventListener('DOMContentLoaded', function () {
           _indicatorItems.textContent = _indexIndicator + 1; // Обновляет индикатор текущего элемента
         };
 
-        var _cycle = function (direction) { // организовываем автоматическое циклическое прокручивание элементов в слайдере в указанном направлени
+        const _cycle = function (direction) { // организовываем автоматическое циклическое прокручивание элементов в слайдере в указанном направлени
           if (!_config.isCycling) { // Проверяем, включен ли режим цикличного прокручивания (_config.isCycling)
             return; // Если режим цикличного прокручивания не включен, выходим из функции
           }
@@ -510,10 +502,10 @@ document.addEventListener('DOMContentLoaded', function () {
           }, _config.interval); // Интервал времени для вызова функции _transformItem 
         };
 
-        var _controlClick = function (e) { // Обработчик клика на элементы управления
+        const _controlClick = function (e) { // Обработчик клика на элементы управления
           if (e.target.classList.contains('slider__control')) { // Проверяем, кликнул ли пользователь на элемент управления слайдером
             e.preventDefault(); // Предотвращаем стандартное поведение браузера по умолчанию
-            var direction = e.target.classList.contains('slider__control_right') ? 'right' : 'left'; // Определяем направление движения (вправо или влево)
+            const direction = e.target.classList.contains('slider__control_right') ? 'right' : 'left'; // Определяем направление движения (вправо или влево)
             _transformItem(direction); // Вызываем функцию _transformItem для выполнения прокрутки в указанном направлении
             clearInterval(_interval); // Останавливаем текущий интервал автоматического листания
             _cycle(_config.direction); // Запускаем цикл автоматического листания, если это предусмотрено настройками
@@ -521,27 +513,28 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         };
 
-        var _handleVisibilityChange = function () { // Обработчик изменения видимости страницы
+
+        const _handleVisibilityChange = function () { // Обработчик изменения видимости страницы
           if (document.visibilityState === "hidden" || document.hidden) { // Проверка состояния видимости документа или страница не активна
             clearInterval(_interval); // Если документ стал невидимым, остановить автоматическую прокрутку слайдов
           } else {
             clearInterval(_interval); // Остановить текущий интервал автоматической прокрутки слайдов
             _cycle(_config.direction); // Запустить автоматическую прокрутку слайдов с заданным направлением
           }
-        }
+        };
 
-        var _handleWindowBlur = function () { // Обработчик потери фокуса окна браузера (blur)
+        const _handleWindowBlur = function () { // Обработчик потери фокуса окна браузера (blur)
           clearInterval(_interval); // Остановить текущий интервал автоматической прокрутки слайдов
         };
 
-        var _handleWindowFocus = function () { // Обработчик события получения фокуса окна браузера (focus)
+        const _handleWindowFocus = function () { // Обработчик события получения фокуса окна браузера (focus)
           if (_config.isCycling) { // Проверяем, включен ли режим циклической прокрутки в конфигурации
             clearInterval(_interval); // Остановить текущий интервал автоматической прокрутки слайдов
             _cycle(_config.direction); // Запустить автоматическую прокрутку слайдов с заданным направлением
           }
         };
 
-        var _refresh = function () { // Функция для обновления слайдера
+        const _refresh = function () { // Функция для обновления слайдера
           clearInterval(_interval); // Остановка интервала автоматической прокрутки слайдов
           _mainElement.innerHTML = _html;  // Восстановление исходного HTML содержимого основного элемента слайдера
 
@@ -581,7 +574,7 @@ document.addEventListener('DOMContentLoaded', function () {
         function _onTouchMove(e) { // Функция обработки движения пальца по экрану (touchmove)
           if (!_isSwiping) return; // Если не происходит свайп, выходим из функции
 
-          var _endX = e.touches[0].clientX; // Получаем текущую позицию касания по оси X
+          const _endX = e.touches[0].clientX; // Получаем текущую позицию касания по оси X
           _moveX = _endX - _startX; // Вычисляем расстояние, на которое был смещен палец
 
           // Ограничиваем смещение, чтобы оно не превышало ширину элемента слайда плюс некоторый запас (32 пикселя)
@@ -609,11 +602,11 @@ document.addEventListener('DOMContentLoaded', function () {
             _sliderWrapper.style.transform = 'translateX(' + _transform + 'px)';
           }
           _cycle(_config.direction); // Запускаем автоматическую прокрутку слайдов с заданным направлением
-        };
+        }
 
-        var _handleOrientationChange = function () { // Адаптации интерфейса под изменение размеров окна и ориентации устройства
-          var _index = 0,  // Индекс активного состояния
-            width = parseFloat(document.body.clientWidth);  // Ширина документа
+        const _handleOrientationChange = function () { // Адаптации интерфейса под изменение размеров окна и ориентации устройства
+          let _index = 0;  // Индекс активного состояния
+          const width = parseFloat(document.body.clientWidth);  // Ширина документа
 
           // Перебор всех состояний (_states) и определение текущего индекса в зависимости от ширины окна
           _states.forEach(function (item, index) {
@@ -628,7 +621,7 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         };
 
-        var _setUpListeners = function () { // Установка обработчиков событий
+        const _setUpListeners = function () { // Установка обработчиков событий
           // Добавление обработчика клика на основной элемент слайдера
           _mainElement.addEventListener('click', _controlClick);
 
@@ -691,9 +684,10 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }());
 
-    var slider = multiItemSlider('.slider', {
+    const slider = multiItemSlider('.slider', {
       isCycling: true
     });
+
   }
 
   handleSladerParticipants();
