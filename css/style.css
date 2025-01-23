@@ -177,6 +177,22 @@ svg {
 /* header */
 
 .header {
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.header__logo {
+  display: inline-block;
+  width: 250px;
+  padding-top: 26px;
+}
+
+/* hero */
+
+.hero {
   position: relative;
   height: 700px;
   background-color: #e9ded4;
@@ -185,36 +201,30 @@ svg {
   overflow-x: hidden;
 }
 
-.header__wrapper {
+.hero__wrapper {
   width: 1900px;
   margin: 0 auto;
   height: 700px;
 }
 
-.header__container {
+.hero__container {
   position: relative;
   height: 100%;
 }
 
-.header__logo {
-  display: inline-block;
-  width: 245px;
-  padding-top: 26px;
-  margin-bottom: 59px;
-}
 
-.header__content {
+.hero__content {
   position: relative;
   width: 544px;
   height: 444px;
-  margin-bottom: 132px;
+  top: 124px;
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 2;
 }
 
-.header__content h1 {
+.hero__content h1 {
   margin-bottom: 24px;
   font-family: "Merriweather";
   font-weight: 400;
@@ -223,7 +233,7 @@ svg {
   text-transform: uppercase;
 }
 
-.centre {
+.center {
   padding-left: 92px;
 }
 
@@ -231,21 +241,21 @@ svg {
   padding-left: 35px;
 }
 
-.header__descr {
+.hero__descr {
   margin-bottom: 39px;
   font-size: 18px;
   line-height: 130%;
   text-align: center;
 }
 
-.header__link {
+.hero__link {
   width: 542px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.link-header {
+.link-hero {
   padding: 14px 45px;
   font-weight: 500;
   font-size: 16px;
@@ -258,7 +268,7 @@ svg {
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.header__link-left {
+.hero__link-left {
   padding: 16px 47px;
   color: var(--background-color);
   background-color: var(--btn__default-color);
